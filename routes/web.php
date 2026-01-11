@@ -60,13 +60,4 @@ Route::middleware(['auth', 'owner'])->group(function () {
 
 
 
-// Temporary Route for Seeding on Railway
-Route::get('/force-seed', function () {
-    \Illuminate\Support\Facades\Artisan::call('migrate:fresh', [
-        '--seed' => true,
-        '--force' => true
-    ]);
-    return 'Database berhasil di-reset dan diisi data! Silakan kembali ke halaman utama.';
-});
-
 require __DIR__ . '/auth.php';
